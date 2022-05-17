@@ -13,6 +13,22 @@ body {
   margin: 0;
 }
 
+.input-field {
+  @apply bg-slate-400 text-slate-800 rounded-md px-2 py-1 w-64 focus:outline-none
+}
+
+.input-label {
+  @apply text-cyan-200 text-left my-1
+}
+
+.input-button {
+  @apply text-cyan-200 w-64 p-2 my-1 hover:cursor-pointer bg-gray-800 rounded-md hover:bg-gray-900 focus:outline-none
+}
+
+.input-container {
+  @apply flex flex-col justify-items-start
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
