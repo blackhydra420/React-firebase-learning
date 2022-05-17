@@ -12,7 +12,7 @@ const Login = props => {
     const submitForm = event => {
         event.preventDefault();
         setLoginError('');
-        console.log(uemail.current.value + "|" + upass.current.value);
+        //console.log(uemail.current.value + "|" + upass.current.value);
 
         const userEmail = uemail.current.value;
         const userPass = upass.current.value;
@@ -30,14 +30,14 @@ const Login = props => {
                 .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
-                    props.onUserLoggedIn(user);
+                    //props.onUserLoggedIn(user);
                     // ...
                 })
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
-                    console.log(errorMessage);
-                    if(errorMessage.indexOf("wrong-password") != -1 || errorMessage.indexOf("user-not-found") != -1){
+                    //console.log(errorMessage);
+                    if(errorMessage.indexOf("wrong-password") !== -1 || errorMessage.indexOf("user-not-found") !== -1){
                         setLoginError("Email or password is incorrect!");
                     }
                 });
@@ -47,7 +47,7 @@ const Login = props => {
 
     return (
         <div className="m-0 p-0 h-screen w-screen bg-slate-900 flex flex-col justify-center">
-            <form onSubmit={submitForm} className="m-auto max-w-lg bg-slate-600 p-4 flex gap-3 flex-col justify-center border-solid rounded-md">
+            <form onSubmit={submitForm} className="m-auto max-w-lg bg-slate-600 p-4 flex gap-3 flex-col justify-center border-solid rounded-md shadow-lg">
                 <div className="input-container">
                     <label className='text-cyan-200 text-left font-semibold text-lg'>Welcome back!</label>
                 </div>
